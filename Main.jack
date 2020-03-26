@@ -1,0 +1,76 @@
+
+class Main{
+
+	function void main(){
+
+		var Point P;
+		var Square S;
+		var Circle C;
+
+		var int s_X,s_Y,s_Size;
+		var int c_X,c_Y,c_r;
+
+		var int randomX,randomY;
+
+		var int pointsInside;
+		var int pointsTotal;
+		var int n;
+
+		let pointsInside = 0;
+		
+		do Output.printString("MONTE CARLO PI APPROXIMATION");
+		do Output.println();
+		do Output.println();
+
+		let pointsTotal = Keyboard.readInt("Input number : ");
+		do Output.println();
+
+
+
+		let s_X = 250;
+		let s_Y = 15;
+		let s_Size = 220;
+
+		let c_r = s_Size/2;
+		let c_X = (2*s_X+s_Size)/2;
+		let c_Y = (2*s_Y+s_Size)/2;
+
+		let S = Square.new(s_X,s_Y,s_Size);
+		let C = Circle.new(c_X,c_Y,c_r);
+
+
+		let n = 0;
+
+		while(n < pointsTotal){
+			let randomX = Random.randomInRange(s_X,s_X+s_Size);
+			let randomY = Random.randomInRange(s_Y,s_Y+s_Size);
+
+			let P = Point.new(randomX,randomY);
+			
+			if(C.containsPoint(P)){
+				let pointsInside = pointsInside + 1;
+			}
+			let n = n + 1;
+		}
+		do Output.printString("Points inside circle : ");
+		do Output.printInt(pointsInside);
+		do Output.println();
+		do Output.println();
+		do Output.println();
+		do Output.println();
+		do Output.println();
+		do Output.printString("Divide the number of");
+		do Output.println();
+		do Output.printString("points inside the circle");
+		do Output.println();
+		do Output.printString("with the number of total");
+		do Output.println();
+		do Output.printString("points, multiply by four");
+		do Output.println();
+		do Output.printString("and you will have an");
+		do Output.println();
+		do Output.printString("approximation of pi");
+		return;
+	}
+
+}

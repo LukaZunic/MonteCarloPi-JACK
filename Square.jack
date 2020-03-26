@@ -1,0 +1,14 @@
+
+class Square{
+
+	field int X,Y,size;
+	constructor Square new(int x, int y, int size){
+		let X = x; let Y = y; let size = size;
+		do Screen.setColor(true);
+		do Screen.drawRectangle(x-5, y-5, x+size+5, y+size+5);
+		do Screen.setColor(false);
+		do Screen.drawRectangle(x, y, x+size, y+size);
+		return this;
+	}
+
+}

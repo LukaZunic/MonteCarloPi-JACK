@@ -1,0 +1,19 @@
+
+class Point{
+
+	field int X,Y;
+	constructor Point new(int x, int y){
+		let X = x; let Y = y;
+		do Screen.setColor(true);
+		do Screen.drawCircle(x,y,1);
+
+		return this;
+	}
+	method int getX(){
+		return X;
+	}
+	method int getY(){
+		return Y;
+	}
+
+}

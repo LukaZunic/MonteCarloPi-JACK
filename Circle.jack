@@ -1,0 +1,27 @@
+
+class Circle{
+
+	field int X,Y,R;
+	constructor Circle new(int x, int y, int r){
+
+		let X = x; let Y = y; let R = r;
+		do Screen.setColor(true);
+		do Screen.drawCircle(X,Y,R+5);
+		do Screen.setColor(false);
+		do Screen.drawCircle(X,Y,R);
+
+		return this;
+	}
+
+	method bool containsPoint(Point P){
+		var int d;
+		let d = Math.sqrt(((P.getX() - X)*(P.getX() - X)) + ((P.getY()-Y)*(P.getY()-Y)));
+		if (d < R){
+			return true;
+		}else{
+			return false;
+		}
+
+	}
+	
+}
