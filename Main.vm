@@ -149,13 +149,13 @@ push local 3
 push local 3
 push local 5
 add
-call Random.between 2
+call Random.randomInRange 2
 pop local 9
 push local 4
 push local 4
 push local 5
 add
-call Random.between 2
+call Random.randomInRange 2
 pop local 10
 push local 9
 push local 10

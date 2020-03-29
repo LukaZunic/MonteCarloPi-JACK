@@ -15,6 +15,8 @@ class Main{
 		var int pointsInside;
 		var int pointsTotal;
 		var int n;
+		var int d;
+		var int h;
 
 		let pointsInside = 0;
 		
@@ -40,16 +42,42 @@ class Main{
 
 
 		let n = 0;
+		let h = 0;
 
 		while(n < pointsTotal){
 			let randomX = Random.randomInRange(s_X,s_X+s_Size);
 			let randomY = Random.randomInRange(s_Y,s_Y+s_Size);
 
-			let P = Point.new(randomX,randomY);
+			//let P = Point.new(randomX,randomY);
 			
-			if(C.containsPoint(P)){
+			//if(C.containsPoint(P)){
+			//	let pointsInside = pointsInside + 1;
+			//}
+				
+
+			let d = Math.sqrt(((randomX - c_X)*(randomX - c_X)) + ((randomY-c_Y)*(randomY-c_Y)));
+			if (d < c_r){
 				let pointsInside = pointsInside + 1;
+				do Screen.setColor(false);
+			}else{
+				do Screen.setColor(true);
 			}
+
+
+
+			if(pointsTotal > 3000){
+				if(h = 2){
+					//do Screen.setColor(true);
+					do Screen.drawCircle(randomX,randomY,1);
+					let h = 0;
+				}
+				let h = h + 1;
+			}else{
+				//do Screen.setColor(true);
+				do Screen.drawCircle(randomX,randomY,1);
+			}
+			
+			
 			let n = n + 1;
 		}
 		do Output.printString("Points inside circle : ");
@@ -70,6 +98,10 @@ class Main{
 		do Output.printString("and you will have an");
 		do Output.println();
 		do Output.printString("approximation of pi");
+
+		do C.dispose();
+		do S.dispose();
+
 		return;
 	}
 

@@ -7,8 +7,10 @@ class Circle{
 		let X = x; let Y = y; let R = r;
 		do Screen.setColor(true);
 		do Screen.drawCircle(X,Y,R+5);
-		do Screen.setColor(false);
-		do Screen.drawCircle(X,Y,R);
+
+		
+		//do Screen.setColor(false);
+		//do Screen.drawCircle(X,Y,R);
 
 		return this;
 	}
@@ -23,5 +25,10 @@ class Circle{
 		}
 
 	}
+
+	method void dispose(){
+        do Memory.deAlloc(this);
+        return;
+    }
 	
 }

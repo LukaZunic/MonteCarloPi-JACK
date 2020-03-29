@@ -16,4 +16,9 @@ class Point{
 		return Y;
 	}
 
+	method void dispose(){
+        do Memory.deAlloc(this);
+        return;
+    }
+
 }

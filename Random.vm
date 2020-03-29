@@ -39,7 +39,7 @@ add
 pop static 0
 push static 0
 return
-function Random.between 1
+function Random.randomInRange 1
 push argument 1
 push argument 0
 sub
